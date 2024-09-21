@@ -60,15 +60,15 @@ describe('POST /api/recuperarPassword', () => {
 
 
 const request = require('supertest');
-const app = require('../../app'); // Ajusta la ruta según la ubicación de tu archivo app.js
+const app = require('../../app'); 
 const mongoose = require('mongoose');
 
-let token; // Aquí pegarás el token manualmente
+let token; 
 
 describe('POST /api/recuperarPassword', () => {
   beforeAll(async () => {
-    // Aquí puedes colocar manualmente el token que recibes por correo
-    token = '332cb43488c81a677ef609cbc4ace042b085a8ed4b946341c09f45cbfa07b548'; // Pega el token que recibes en tu correo
+    
+    token = '332cb43488c81a677ef609cbc4ace042b085a8ed4b946341c09f45cbfa07b548'; // Pegar el token que recibes en tu correo
   });
 
   it('debería restablecer la contraseña correctamente', async () => {
@@ -81,7 +81,7 @@ describe('POST /api/recuperarPassword', () => {
   });
 
   it('debería devolver un error si el token es inválido o ha expirado', async () => {
-    // Simula un token inválido
+
     const invalidToken = 'token_invalido';
 
     const response = await request(app)
@@ -102,7 +102,7 @@ describe('POST /api/recuperarPassword', () => {
   });
 
   afterAll(async () => {
-    // Cerrar conexiones o limpiar recursos
+    
     await mongoose.connection.close();
   });
 });

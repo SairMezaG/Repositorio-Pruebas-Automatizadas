@@ -1,11 +1,11 @@
 /* const request = require('supertest');
-const app = require('../../app'); // Ajusta la ruta según la ubicación de tu archivo app.js
+const app = require('../../app'); 
 
 describe('POST /api/recuperarPassword', () => {
   it('debería enviar un correo de recuperación de contraseña si el usuario existe', async () => {
     const response = await request(app)
       .post('/api/recuperarPassword')
-      .send({ correo: 'z.meza.g@hotmail.com' }); // Asegúrate de usar un correo válido en tu base de datos de pruebas
+      .send({ correo: 'z.meza.g@hotmail.com' });
 
     expect(response.statusCode).toBe(200);
     expect(response.body.message).toBe('Correo electrónico enviado');
@@ -21,7 +21,7 @@ describe('POST /api/recuperarPassword', () => {
   });
 
   afterAll(async () => {
-    // Cerrar conexiones o limpiar recursos
+    
     await mongoose.connection.close();
   });
 }); */
